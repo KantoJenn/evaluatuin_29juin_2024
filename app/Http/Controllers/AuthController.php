@@ -11,20 +11,12 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
-{
-    // Méthode pour afficher le formulaire de connexion client
-    public function showClientLoginForm()
-    {
-
-        $type = TypePersonne::all();
-        return view('auth.login-client', compact('type'));
-    }
-
+{// Gestion de la connexion du proprio
     public function login_proprio(Request $request)
     {
         $request->validate([
             'numero_telephone' => 'required|exists:proprios,numero_telephone',
-            'type_id' => 'required|exists:types_proprios,id',
+            'type_id' => 'required|exists:types_personnes,id',
         ]);
 
         $proprio = Proprio::where('numero_telephone', $request->numero_telephone)->first();
@@ -34,11 +26,10 @@ class AuthController extends Controller
             return back()->withErrors(['type_id' => 'Type de proprio incorrect.'])->withInput();
         }
 
-        Auth::login($proprio);
-
-        return('ok');
+        return ('ok'); // Vous pouvez rediriger vers votre tableau de bord ou une autre route
     }
 
+    // Déconnexion du proprio
     public function logout_proprio()
     {
         Auth::logout();

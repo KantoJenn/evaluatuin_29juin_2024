@@ -23,7 +23,7 @@
                             <div class="card-body">
                                 <h4 class="card-title">Se connecter Proprietaire</h4>
 
-                                <form action="login/proprio" method="POST">
+                                <form action="login/proprio" method="GET">
 
                                     @csrf
                                     <div class="form-group">
