@@ -13,6 +13,7 @@ class Proprio extends Model
     protected $primaryKey = 'id';
     protected $fillable = ["numero","id_type_perso"];
 
+    protected $hidden = ['remember_token'];
 
     public function typePersonneBe(){
         return $this->belongsTo(TypePersonne::class, 'id');
