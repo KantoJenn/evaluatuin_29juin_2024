@@ -35,6 +35,24 @@ create table bien(
     nom varchar(50),
     description varchar(150),
     region varchar(50),
-    loyer integer,
+    loyer numeric (15,2),
     id_proprio integer references proprio (id)
+);
+
+create table typebien(
+    id serial primary key not null,
+    nom varchar (50),
+    commission decimal(3,2)
+
+);
+
+create table location (
+    id serial primary key not null,
+    idproprio integer references proprio (id),
+    idbien integer references bien (id),
+    idclient integer references client (id),
+    duree INTEGER NOT NULL,
+    date_debut date
+
+
 );
