@@ -28,6 +28,10 @@ create table proprio(
     id_type_perso integer references typePersonne (id)
 );
 
+insert into proprio (numero,id_type_perso) values
+(1234, 1),
+(5678,2);
+
 create table client(
     id serial primary key not null,
     email varchar(30) UNIQUE ,

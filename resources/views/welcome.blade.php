@@ -25,12 +25,11 @@
 
 
 
-                                <a href="/login/client" class="btn btn-primary">Se connecter
-                                    Client</a>
+                                <a href="login/client" class="btn btn-primary">Se connecter Client</a>
                                 <hr>
-                                <a href="/login/admin" class="btn btn-primary">Se connecter Admin</a>
+                                <a href="login/admin" class="btn btn-primary">Se connecter Admin</a>
                                 <hr>
-                                <a href="/login/proprio" class="btn btn-primary">Se connecter Proriétaire</a>
+                                <a href="login/proprio-page" class="btn btn-primary">Se connecter Proriétaire</a>
 
 
 

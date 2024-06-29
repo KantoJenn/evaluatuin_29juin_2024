@@ -30,7 +30,7 @@
                                         <li class="alert alert-danger">{{ $error }}</li>
                                     @endforeach
                                 </ul>
-                                <form action="/login/client" method="POST">
+                                <form action="login/client" method="POST">
 
                                     @csrf
 

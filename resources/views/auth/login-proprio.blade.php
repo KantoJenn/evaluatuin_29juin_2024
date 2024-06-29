@@ -23,14 +23,14 @@
                             <div class="card-body">
                                 <h4 class="card-title">Se connecter Proprietaire</h4>
 
-                                <form action="/login/proprio" method="POST">
+                                <form action="login/proprio" method="POST">
 
                                     @csrf
                                     <div class="form-group">
                                         <label>Numero</label>
                                         <input type="text" class="form-control" name="numero_telephone">
                                     </div>
-                                    <div>
+                                    <div class="form-group">
                                         <label>Type</label>
                                         <select class="form-control" name="type">
                                             @foreach ($type as $types)
@@ -38,13 +38,8 @@
                                             @endforeach
                                         </select>
                                     </div>
-
-                                    @error('type_id')
-                                        <div>{{ $message }}</div>
-                                    @enderror
-
-                                    
-                                    <div class="form-group no-margin">
+                                    <hr>
+                                    <div class="form-group no-margin ">
                                         <button type="submit" class="btn btn-primary btn-block">
                                             Se connecter
                                         </button>
