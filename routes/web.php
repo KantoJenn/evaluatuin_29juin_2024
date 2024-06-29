@@ -21,8 +21,11 @@ Route::get('/', function () {
 // Route pour se connecter en tant que client
 Route::get('/login/client', [AuthController::class, 'showClientLoginForm'])->name('login.client');
 
+
 // Route pour se connecter en tant qu'admin
 Route::get('/login/admin', [AuthController::class, 'showAdminLoginForm'])->name('login.admin');
 
 // Route pour se connecter en tant que vendeur
-Route::get('/login/proprio', [AuthController::class, 'showProprioLoginForm'])->name('login.proprio');
+Route::get('/login/proprio', [AuthController::class, 'showProprioLoginForm']);
+Route::post('/login/proprio', [AuthController::class, 'login_proprio']);
+Route::post('/logout/proprio', [AuthController::class, 'logout_proprio']);

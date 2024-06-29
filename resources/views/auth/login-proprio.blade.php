@@ -28,7 +28,7 @@
                                     @csrf
                                     <div class="form-group">
                                         <label>Numero</label>
-                                        <input type="text" class="form-control" name="numero">
+                                        <input type="text" class="form-control" name="numero_telephone">
                                     </div>
                                     <div>
                                         <label>Type</label>
@@ -38,6 +38,12 @@
                                             @endforeach
                                         </select>
                                     </div>
+
+                                    @error('type_id')
+                                        <div>{{ $message }}</div>
+                                    @enderror
+
+                                    
                                     <div class="form-group no-margin">
                                         <button type="submit" class="btn btn-primary btn-block">
                                             Se connecter

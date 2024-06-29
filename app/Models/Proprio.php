@@ -11,11 +11,12 @@ class Proprio extends Model
     public $timestamps = false;
 
     protected $primaryKey = 'id';
-    protected $fillable = ["numero","id_type_perso"];
+    protected $fillable = ["numero", "id_type_perso"];
 
     protected $hidden = ['remember_token'];
 
-    public function typePersonneBe(){
-        return $this->belongsTo(TypePersonne::class, 'id');
+    public function typePersonneBe()
+    {
+        return $this->belongsTo(TypePersonne::class, 'id_type_perso');
     }
 }

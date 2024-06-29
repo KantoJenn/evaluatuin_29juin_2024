@@ -18,6 +18,10 @@ create table typePersonne(
     nom varchar(50)
 );
 
+insert into typePersonne (nom) values
+('particulier '),
+('professionnel');
+
 create table proprio(
     id serial primary key not null,
     numero varchar(30) UNIQUE,
